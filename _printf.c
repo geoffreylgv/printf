@@ -15,8 +15,8 @@ int handle_string( char *str)
 	int i = 0;
 	if (str == NULL)
 	{
-		handle_string("(Null)");
-		return (i);
+		handle_string("No args passed");
+		return (i++);
 	}
 	while (str[i])
 	{
@@ -36,7 +36,6 @@ int _printf(const char *format, ...)
 
 	if (!format || !format[0])
 		return (-1);
-
 	while (*format)
 	{
 		if (*format == '%')
@@ -52,6 +51,8 @@ int _printf(const char *format, ...)
 				char *str = va_arg(args, char *);
 				count += handle_string(str);
 			}
+			/*else if (*format == 'd' || *format == 'i')
+				int c*/
 			else if (*format == '%')
 			{
 				_putchar('%');
