@@ -10,5 +10,12 @@
 int _printf(const char *format, ...)
 {
 
+	va_list arglist;
+	char arg[3];
+
+	if (format == NULL)
+		return (-1);
+
+	return (0);
 }
 
