@@ -1,13 +1,22 @@
 #include "main.h"
+
 /**
+ * _putchar - Write out to the standard output the char c
+ * @c: Char Value character to be printed
  *
- *
+ * Return: Always success 1 / -1 on error
  */
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
+/**
+ * handle_string - Printing a string
+ * @str: The string to print
+ *
+ * Return: String count to print integer
+ */
 int handle_string( char *str)
 {
 	int i = 0;
@@ -25,6 +34,13 @@ int handle_string( char *str)
 
 }
 
+/**
+ * _printf - The standard print formatted of the original c
+ * @format: String character, the format string is
+ * composed of zero or more directives, see: man 3 printf
+ *
+ * Return: Count as integer
+ */
 int _printf(const char *format, ...)
 {
 
@@ -71,3 +87,4 @@ int _printf(const char *format, ...)
 	}
 	return (count);
 }
+
