@@ -1,6 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdarg.h>
 /**
  *
  *
@@ -15,8 +13,8 @@ int handle_string( char *str)
 	int i = 0;
 	if (str == NULL)
 	{
-		handle_string("No args passed");
-		return (i++);
+		handle_string("No");
+		return (i + 2);
 	}
 	while (str[i])
 	{
@@ -30,13 +28,13 @@ int handle_string( char *str)
 int _printf(const char *format, ...)
 {
 
-	int count;
+	int count = 0;
 	va_list args;
 	va_start(args, format);
 
 	if (!format || !format[0])
 		return (-1);
-	while (*format)
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
@@ -67,9 +65,9 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(*format);
+			count+= _putchar(*format);
 			format++;
 		}
 	}
-	return (0);
+	return (count);
 }
