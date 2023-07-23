@@ -9,7 +9,26 @@
 #include <unistd.h>
 
 /* prototypes go here */
+int _puts(char *c);
 int _putchar(char c);
+int _printf(char *format, ...);
+int print_percent(char *format, va_list arglist);
+int print_char(char *format, va_list arglist);
+int print_string(char *format, va_list arglist);
 
+
+/* structs go here */
+/**
+ * struct formattype - defines user format
+ * @form: formalize the datattype to its correspo
+ * @func: call to action : call correspond function
+ *
+ * Return: func type
+ */
+typedef struct formattype
+{
+	char *form;
+	int (*func)(char *format, va_list);
+};
 
 #endif
