@@ -9,7 +9,7 @@ include "main.h"
  */
 int _putchar(char c)
 {
-        return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 
@@ -21,16 +21,16 @@ int _putchar(char c)
  * Return: string counter
  *
  */
-int _putchar(char *c)
+int _puts(char *c)
 {
 	int count = 0;
 
-	while(*c)
+	while (*c)
 	{
 		_putchar(*c);
 		c++;
 		count++;
 	}
-        return (count);
+	return (count);
 }
 
