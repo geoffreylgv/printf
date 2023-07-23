@@ -25,10 +25,9 @@ int _puts(char *c)
 {
 	int count = 0;
 
-	while (*c)
+	while (c[count])
 	{
-		_putchar(*c);
-		c++;
+		_putchar(c[count]);
 		count++;
 	}
 	return (count);
