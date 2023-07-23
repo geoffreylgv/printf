@@ -3,7 +3,7 @@
 #include "main.h"
 int main(void)
 {
-	int len;
+	int len, len3;
 	int len4, len6;
 	len = _printf("test\n");
 	printf("%d\n", len);
@@ -11,6 +11,11 @@ int main(void)
 	printf("%d\n", len4);
 	len6 = _printf("%s.\n",NULL);
 	printf("%d\n", len6);
+	len3 = _printf("char : %c , string : %s\n", 't', "test");
+	/*len3 = _printf("char : %c\n", 'c');*/
+        /*len2 = printf("Percent:[%%]\n");*/
+    	printf("Len:[%d]\n", len3);
+    	printf("Len:[%d]\n", len3);
 	_printf("______________END_____________\n");
 
 
