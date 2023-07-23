@@ -12,7 +12,7 @@ int print_percent(char *format, va_list arglist)
 	(void)format;
 	(void)arglist;
 	_putchar("%");
-	return 1;
+	return (1);
 }
 
 /**
@@ -30,14 +30,14 @@ int print_char(char *format, va_list arglist)
 }
 
 
-/** 
+/**
  * print_string - print string
  * @format: format
  * @arglist: list of arg
  *
- *Return: string count to print
+ * Return: string count to print
  */
-int print_char(char *format, va_list arglist)
+int print_string(char *format, va_list arglist)
 {
 	char *string;
 	int count;
@@ -45,9 +45,9 @@ int print_char(char *format, va_list arglist)
 	string = va_arg(arglist, char*);
 	(void)format;
 
-	if(string)
+	if (string)
 		count = _puts(string);
-		
+
 	return (count);
 }
 
