@@ -11,7 +11,7 @@ int print_percent(char *format, va_list arglist)
 {
 	(void)format;
 	(void)arglist;
-	_putchar("%");
+	_puts("%");
 	return (1);
 }
 
