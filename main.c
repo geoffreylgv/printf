@@ -28,8 +28,6 @@ int main(void)
 	printf("Len:[%d]\n", 4);
 
 	_printf("______________END_____________\n");
-
-
 	return (0);
 }
 
