@@ -9,19 +9,20 @@
 int handle_string(va_list args)
 {
 	int i;
+	char *str;
 
 	i = 0;
-
-	cahr *str = va_arg(args, int);
+	str = va_arg(args, char *);
 
 	if (str == NULL)
 	{
 		str = "NULL Here";
 	}
+
 	while (*str != '\0')
 	{
 		i += _putchar(*str);
-		i++;
+		str++;
 	}
 	return (i);
 
