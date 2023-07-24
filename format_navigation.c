@@ -31,11 +31,12 @@ int format_navigation(const char *format, va_list args, int count)
 			_putchar(*format);
 			count++;
 		}
-
+		format++;
 	}
 	else
 	{
 		count += _putchar(*format);
+		format++;
 	}
 	return (count);
 }

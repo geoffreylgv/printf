@@ -17,7 +17,7 @@ int main(void)
 
 	len4 = _printf("%s.\n", "test");
 
-	len3 = _printf("char : %c , string : %s\n", 't', "test");
+	_printf("char : %c , string : %s\n", 't', "test");
 
 	printf("%d\n", len4);
 	printf("%d\n", len);
