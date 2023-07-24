@@ -6,38 +6,27 @@
  * @args: Argument va_list passed
  * @count: Counter, number of char
  *
- * Return: count
+ * Return: char counter ptr
  */
-int format_navigation(const char *format, va_list args, int count)
+void format_navigation(const char *format, va_list args, int *count)
 {
-	if (*format == '%')
+
+	format++;
+	switch (*format)
 	{
-		format++;
-		if (*format == 'c')
-		{
-			count += _putchar(va_arg(args, int));
-		}
-		else if (*format == 's')
-		{
-			count += handle_string(va_arg(args, char*));
-		}
-		else if (*format == '%')
-		{
-			_putchar('%');
-			count++;
-		}
-		else
-		{
+		case 'c':
+			*count += handle_char(args);
+			break;
+		case 's':
+			*count += handle_string(args);
+			break;
+		case '%':
+			*count += handle_percent();
+			break;
+		default:
 			_putchar(*format);
-			count++;
-		}
-		format++;
+			(*count)++;
+			break;
 	}
-	else
-	{
-		count += _putchar(*format);
-		format++;
-	}
-	return (count);
 }
 
