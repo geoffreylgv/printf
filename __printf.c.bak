@@ -18,22 +18,41 @@ int _printf(const char *format, ...)
 
 	if (!format || !format[0])
 		return (-1);
-
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
-			format = format_navigation(format, args, &count);
+			format++;
+			if (*format == 'c')
+			{
+				char c = va_arg(args, int);
+
+				count += _putchar(c);
+			}
+			else if (*format == 's')
+			{
+				char *str = va_arg(args, char *);
+
+				count += handle_string(str);
+			}
+			else if (*format == '%')
+			{
+				_putchar('%');
+				count++;
+			}
+			else
+			{
+				_putchar(*format);
+				count++;
+			}
 			format++;
 		}
 		else
 		{
-			_putchar(*format);
+			count += _putchar(*format);
 			format++;
-			count++;
 		}
 	}
-
 	va_end(args);
 	return (count);
 }

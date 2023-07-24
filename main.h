@@ -7,6 +7,13 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int handle_string(char *str);
+
+/* format handler */
+int handle_string(va_list args);
+int handle_char(va_list args);
+int handle_percent(void);
+
+
+const char *format_navigation(const char *format, va_list args, int *count);
 
 #endif
