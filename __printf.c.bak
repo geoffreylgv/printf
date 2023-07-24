@@ -20,8 +20,38 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format != '\0')
 	{
-		count = format_navigation(format, args, count);
-		format++;
+		if (*format == '%')
+		{
+			format++;
+			if (*format == 'c')
+			{
+				char c = va_arg(args, int);
+
+				count += _putchar(c);
+			}
+			else if (*format == 's')
+			{
+				char *str = va_arg(args, char *);
+
+				count += handle_string(str);
+			}
+			else if (*format == '%')
+			{
+				_putchar('%');
+				count++;
+			}
+			else
+			{
+				_putchar(*format);
+				count++;
+			}
+			format++;
+		}
+		else
+		{
+			count += _putchar(*format);
+			format++;
+		}
 	}
 	va_end(args);
 	return (count);
