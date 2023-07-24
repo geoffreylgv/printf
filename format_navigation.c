@@ -8,7 +8,7 @@
  *
  * Return: char counter ptr
  */
-void format_navigation(const char *format, va_list args, int *count)
+const char *format_navigation(const char *format, va_list args, int *count)
 {
 
 	format++;
@@ -28,5 +28,6 @@ void format_navigation(const char *format, va_list args, int *count)
 			(*count)++;
 			break;
 	}
+	return (format);
 }
 

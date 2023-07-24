@@ -23,13 +23,14 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			format_navigation(format, args, &count);
+			format = format_navigation(format, args, &count);
 			format++;
 		}
 		else
 		{
-			count += _putchar(*format);
+			_putchar(*format);
 			format++;
+			count++;
 		}
 	}
 
