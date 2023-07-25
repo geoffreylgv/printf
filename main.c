@@ -13,23 +13,27 @@ int main(void)
 
 	len = _printf("test\n");
 
-	len6 = _printf("%s.\n", NULL);
+	len6 = _printf("%s\n", NULL);
 
-	len4 = _printf("%s.\n", "test");
+	len4 = _printf("%s\n");
+	printf("%s\n");
 
-	_printf("char : %c , string : %s\n", 't', "test");
+	_printf("char:%c, string:%s\n", 't', "test");
+
+	_printf("somthin fake%\n");
+	_printf("fake %vinci %\n");
+	printf("real %vinci %\n");
+	printf("somethn real%\n");
 
 	printf("%d\n", len4);
 	printf("%d\n", len);
 	printf("%d\n", len6);
 	_printf("char : %c\n", 'c');
 	_printf("Percent:[%%]\n");
-	_printf("Len:[%d]\n", 3);
-	printf("Len:[%d]\n", 4);
+	_printf("Len:[%r]\n", 3);
+	printf("Len:[%r]\n", 4);
 
 	_printf("______________END_____________\n");
-
-
 	return (0);
 }
 

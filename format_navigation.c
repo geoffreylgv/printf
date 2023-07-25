@@ -24,6 +24,7 @@ const char *format_navigation(const char *format, va_list args, int *count)
 			*count += handle_percent();
 			break;
 		default:
+			_putchar('%');
 			_putchar(*format);
 			(*count)++;
 			break;
