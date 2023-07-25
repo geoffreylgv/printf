@@ -33,7 +33,16 @@ int main(void)
 	_printf("Percent:[%%%]\n");
 	_printf("Len:[%r]\n", 3);
 	printf("Len:[%r]\n", 4);
-	_printf("______________END_____________\n");
+	_printf("1l here % c \n", 'l');
+	printf("2l here %  c \n", 'l');
+	_printf("1Hello, % s %c %s %\n", "World", 'a', "lx");
+	printf("2Hello, % s % c % s %\n", "World", 'a', "lx");
+	printf("pp %D\n", 43);
+	printf("pppp % D\n", 48);
+	printf("\n");
+	_printf(NULL);
+	printf(NULL);
+	_printf("\n______________END_____________\n");
 	return (0);
 }
 
