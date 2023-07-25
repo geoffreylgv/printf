@@ -8,22 +8,21 @@
  */
 int handle_string(char *str)
 {
-	int i;
+	int i, len;
 
-	i = 0;
 	if (str == NULL)
 	{
-		i = handle_string("(null)");
-		return (i);
+		str = "(null)";
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
+			_putchar(str[i]);
+		return (len);
 	}
-
-	while (*str != '\0')
+	else
 	{
-		_putchar(*str);
-		str++;
-		i++;
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
+			_putchar(str[i]);
+		return (len);
 	}
-	return (i);
-
 }
-

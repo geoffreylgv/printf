@@ -13,7 +13,6 @@ int handle_string(char *str);
 int handle_char(va_list args);
 int handle_percent(void);
 int handle_digit(int num);
-
+int _strlen(char *s);
 const char *format_navigation(const char *format, va_list args, int *count);
-
 #endif
