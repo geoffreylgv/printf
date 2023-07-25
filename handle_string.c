@@ -19,8 +19,9 @@ int handle_string(char *str)
 
 	while (*str != '\0')
 	{
-		i += _putchar(*str);
+		_putchar(*str);
 		str++;
+		i++;
 	}
 	return (i);
 
