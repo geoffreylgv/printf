@@ -2,21 +2,19 @@
 
 /**
  * handle_string - Handles the 's' format
- * @args: va_list containing
+ * @str: string parameter
  *
  * Return: String count char printed
  */
-int handle_string(va_list args)
+int handle_string(char *str)
 {
 	int i;
-	char *str;
 
 	i = 0;
-	str = va_arg(args, char *);
-
 	if (str == NULL)
 	{
-		str = "NULL Here";
+		i = handle_string("(null)");
+		return (i);
 	}
 
 	while (*str != '\0')

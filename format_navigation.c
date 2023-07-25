@@ -12,6 +12,8 @@ const char *format_navigation(const char *format, va_list args, int *count)
 {
 	int num;
 
+	char *str;
+
 	format++;
 	switch (*format)
 	{
@@ -19,7 +21,8 @@ const char *format_navigation(const char *format, va_list args, int *count)
 			*count += handle_char(args);
 			break;
 		case 's':
-			*count += handle_string(args);
+			str = va_arg(args, char *);
+			*count += handle_string(str);
 			break;
 		case '%':
 			*count += handle_percent();

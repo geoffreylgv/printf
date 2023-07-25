@@ -14,7 +14,7 @@ int main(void)
 	len = _printf("test\n");
 
 	len6 = _printf("%s\n", NULL);
-
+	len6 = printf("%s\n", NULL);
 	len4 = _printf("%s\n");
 	printf("%s\n");
 
@@ -29,7 +29,7 @@ int main(void)
 	_printf("len = %d\n", len);
 	_printf("len6 = %d\n", len6);
 	_printf("char : %c\n", 'c');
-	_printf("Percent:[%%]\n");
+	_printf("Percent:[%%%]\n");
 	_printf("Len:[%r]\n", 3);
 	printf("Len:[%r]\n", 4);
 	_printf("______________END_____________\n");
