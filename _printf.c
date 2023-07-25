@@ -1,78 +1,39 @@
 #include "main.h"
+
 /**
+ * _printf - The standard print formatted of the original c
+ * @format: String character, the format string is
+ * composed of zero or more directives, see: man 3 printf
  *
- *
+ * Return: Count as integer
  */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-int handle_string( char *str)
-{
-	int i = 0;
-	if (str == NULL)
-	{
-		handle_string("No");
-		return (i + 2);
-	}
-	while (str[i])
-	{
-		_putchar(str[i]);
-		i++;
-	}
-	return (i);
-
-}
-
 int _printf(const char *format, ...)
 {
-
-	int count = 0;
+	int count;
 	va_list args;
+
+	count = 0;
+
 	va_start(args, format);
 
 	if (!format || !format[0])
 		return (-1);
+
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
-			format++;
-			if (*format == 'c')
-			{
-				char c = va_arg(args, int);
-				count += _putchar(c);
-			}
-			else if (*format == 's')
-			{
-				char *str = va_arg(args, char *);
-				count += handle_string(str);
-			}
-			/*else if (*format == 'd' || *format == 'i')
-				int c*/
-			else if (*format == '%')
-			{
-				_putchar('%');
-				count++;
-			}
-			else
-			{
-				_putchar('%');
-				count++;
-				if (*format)
-				{
-					_putchar(*format);
-					count++;
-				}
-			}
+			format = format_navigation(format, args, &count);
 			format++;
 		}
 		else
 		{
-			count+= _putchar(*format);
+			_putchar(*format);
 			format++;
+			count++;
 		}
 	}
+
+	va_end(args);
 	return (count);
 }
