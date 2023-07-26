@@ -25,6 +25,12 @@ int _printf(const char *format, ...)
 		{
 			format = format_navigation(format, args, &count);
 			format++;
+
+			if (*format == ' ' || *format == '\0')
+			{
+				return (-1);
+				format++;
+			}
 		}
 		else
 		{

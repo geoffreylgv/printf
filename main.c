@@ -28,8 +28,8 @@ int main(void)
 	_printf("len4 = %d\n", len4);
 	_printf("len = %d\n", len);
 	_printf("len6 = %d\n", len6);
-	_printf("char : %c\n",NULL);
-	printf("char : %c\n",NULL);
+	_printf("char : %c\n", NULL);
+	printf("char : %c\n", NULL);
 	_printf("Percent:[%%%]\n");
 	_printf("Len:[%r]\n", 3);
 	printf("Len:[%r]\n", 4);
@@ -37,8 +37,6 @@ int main(void)
 	printf("2l here %  c \n", 'l');
 	_printf("1Hello, % s %c %s %\n", "World", 'a', "lx");
 	printf("2Hello, % s % c % s %\n", "World", 'a', "lx");
-	printf("pp %D\n", 43);
-	printf("pppp % D\n", 48);
 	printf("\n");
 	_printf(NULL);
 	printf(NULL);
