@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == ' ')
+			while (*format == ' ')
 				format++;
 			format = format_navigation(format, args, &count);
 			format++;
