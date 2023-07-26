@@ -10,7 +10,7 @@
  */
 const char *format_navigation(const char *format, va_list args, int *count)
 {
-	int num;
+	/*int num;*/
 
 	char *str;
 
@@ -26,11 +26,11 @@ const char *format_navigation(const char *format, va_list args, int *count)
 		case '%':
 			*count += handle_percent();
 			break;
-		case 'd':
-		case 'i':
-			num = va_arg(args, int);
-			*count += handle_digit(num);
-			break;
+		/*case 'd':*/
+		/*case 'i':*/
+			/*num = va_arg(args, int);*/
+			/**count += handle_digit(num);*/
+			/*break;*/
 		default:
 			_putchar('%');
 			(*count)++;
