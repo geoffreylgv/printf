@@ -14,7 +14,6 @@ const char *format_navigation(const char *format, va_list args, int *count)
 
 	char *str;
 
-	format++;
 	switch (*format)
 	{
 		case 'c':

@@ -23,14 +23,11 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
+			format++;
+			if (*format == ' ')
+				format++;
 			format = format_navigation(format, args, &count);
 			format++;
-
-			if (*format == ' ' || *format == '\0')
-			{
-				return (-1);
-				format++;
-			}
 		}
 		else
 		{
