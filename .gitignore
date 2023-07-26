@@ -1,2 +1,5 @@
+# ignores all output
 *.out
+test
+-test
 main.c
