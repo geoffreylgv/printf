@@ -10,8 +10,8 @@
 int main(void)
 {
 	int len, len2;
-	len = _printf("len = %d\n", -561024);
-	len2 = printf("len = %d\n", -581024);
+	len = _printf("%d - %d = %d\n", 1024, 2048, -1024);
+	len2 = printf("%d - %d = %d\n", 1024, 2048, -1024);
 	_printf("len = %d\n", len);
 	printf("len2 = %d\n", len2);
 	_printf("\n______________END_____________\n");

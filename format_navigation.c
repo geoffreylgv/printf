@@ -29,7 +29,7 @@ const char *format_navigation(const char *format, va_list args, int *count)
 		case 'd':
 		case 'i':
 			num = va_arg(args, int);
-			*count += handle_digit(num);
+			*count += handle_digit(num, *count);
 			break;
 		default:
 			_putchar('%');

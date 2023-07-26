@@ -5,25 +5,24 @@
  * @num: number parameter
  * Return: (i) count
  */
-int handle_digit(int num)
+int handle_digit(int num, int count)
 {
-	static int i;
 
 	if (num < 0)
         {
               _putchar('-');
-              i++;
+              count++;
               num = abs(num);
         }
 	if ((num / 10) > 0)
 	{
-		i = handle_digit(num / 10);
-		handle_digit(num % 10);
+		handle_digit((num / 10), count);
+		handle_digit((num % 10), count);
 	}
 	if (num < 10)
 	{
 		_putchar(48 + num);
-		i++;
+		count++;
 	}
-	return (i);
+	return (count);
 }
