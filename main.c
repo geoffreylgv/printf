@@ -9,12 +9,14 @@
  */
 int main(void)
 {
-	int len, len4, len6;
+	int len, len3, len4, len6;
 
 	len = _printf("test\n");
 
 	len6 = _printf("%s\n", NULL);
-	len6 = printf("%s\n", NULL);
+	len3 = printf("%s\n", NULL);
+	_printf(" len3 = %d\n", len3);
+	_printf(" len6 = %d\n", len6);
 	len4 = _printf("%s\n");
 	printf("%s\n");
 
@@ -33,8 +35,8 @@ int main(void)
 	_printf("Percent:[%%%]\n");
 	_printf("Len:[%r]\n", 3);
 	printf("Len:[%r]\n", 4);
-	_printf("1l here %            c \n", 'l');
-	printf("2l here %             c \n", 'l');
+	_printf("1l here %c \n", NULL);
+	printf("2l here %c \n", NULL);
 	_printf("1Hello, % s %c %s %\n", "World", 'a', "lx");
 	printf("2Hello, % s % c % s %\n", "World", 'a', "lx");
 	printf("\n");
