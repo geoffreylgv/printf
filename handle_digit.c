@@ -7,10 +7,14 @@
  */
 int handle_digit(int num)
 {
-	int i;
+	static int i;
 
-	i = 0;
-
+	if (num < 0)
+        {
+              _putchar('-');
+              i++;
+              num = abs(num);
+        }
 	if ((num / 10) > 0)
 	{
 		i = handle_digit(num / 10);
