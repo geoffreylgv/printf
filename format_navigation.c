@@ -31,6 +31,9 @@ const char *format_navigation(const char *format, va_list args, int *count)
 			num = va_arg(args, int);
 			*count += handle_digit(num, *count);
 			break;
+		case 'b':
+			*count += handle_binary(args);
+			break;
 		default:
 			_putchar('%');
 			(*count)++;

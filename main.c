@@ -14,6 +14,9 @@ int main(void)
 	len2 = printf("%d - %d = %d\n", 1024, 2048, -1024);
 	_printf("len = %d\n", len);
 	printf("len2 = %d\n", len2);
+	_printf("______Binary________\n");
+	_printf("%b\n", 98);
+	printf("%b\n", 98);
 	_printf("\n______________END_____________\n");
 	return (0);
 }
