@@ -1,23 +1,29 @@
 #include <stdio.h>
-#include <limits.h>
+#include <stdlib.h>
 #include "main.h"
+#include <limits.h>
 
 /**
- * main - Entry point test function
+ * main - Entry point
  *
- * Return: Success
+ * Return: 0 on success, error code otherwise
  */
 int main(void)
 {
 	int len, len2;
-	len = _printf("%d - %d = %d\n", 1024, 2048, -1024);
-	len2 = printf("%d - %d = %d\n", 1024, 2048, -1024);
-	_printf("len = %d\n", len);
-	printf("len2 = %d\n", len2);
-	_printf("______Binary________\n");
-	_printf("%b\n", 98);
-	printf("%b\n", 98);
-	_printf("\n______________END_____________\n");
+
+	len = _printf("%o", 1024);
+	len2 = printf("%o", 1024);
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	_printf("%o", UINT_MAX);
+	_printf("%o - %o = %o\n", 2048, 1024, 1024);
+	_printf("There is %o bytes in %o KB\n", 1024, 1);
+	_printf("%u", 1024);
 	return (0);
 }
-

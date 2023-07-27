@@ -34,6 +34,9 @@ const char *format_navigation(const char *format, va_list args, int *count)
 		case 'b':
 			*count += handle_binary(args);
 			break;
+		case 'o':
+			*count += handle_octal(args);
+			break;
 		default:
 			_putchar('%');
 			(*count)++;
