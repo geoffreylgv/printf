@@ -30,6 +30,11 @@ int main(void)
 	_printf("%b\n", 98);
 	_printf("There is %b bytes in %b KB\n", 1024, 1);
 	_printf("%b - %b = %b\n", 2048, 1024, 1024);
+
+	_printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	_printf("There is %i bytes in %i KB\n", 1024, 1);
+	_printf("%i - %i = %i\n", 1024, 2048, -1024);
+
 	_printf("\n______________END_____________\n");
 	return (0);
 }

@@ -17,7 +17,7 @@ const char *format_navigation(const char *format, va_list args, int *count)
 	else if (*format == '%')
 		*count += handle_percent();
 	else if (*format == 'd' || *format == 'i')
-		*count += handle_digit(va_arg(args, int), *count);
+		*count += handle_digit(va_arg(args, int));
 	else if (*format == 'b')
 		*count += handle_binary(args);
 	else if (*format == 'o')

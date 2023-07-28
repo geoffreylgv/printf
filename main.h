@@ -15,7 +15,7 @@ char *_itoa(long int, int);
 int handle_string(char *str);
 int handle_char(va_list args);
 int handle_percent(void);
-int handle_digit(int num, int count);
+int handle_digit(int num);
 const char *format_navigation(const char *format, va_list args, int *count);
 int handle_binary(va_list args);
 int handle_octal(va_list ags);
