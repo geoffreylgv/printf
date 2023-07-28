@@ -9,10 +9,9 @@
 int handle_pointer(va_list args)
 {
 	char *str;
-	int i, v;
+	int i;
 
 	i = 0;
-	v = 0;
 
 	str = _itoa(va_arg(args, unsigned int), 16);
 

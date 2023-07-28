@@ -10,51 +10,33 @@
  */
 const char *format_navigation(const char *format, va_list args, int *count)
 {
-	int num;
-
-	char *str;
-
-	switch (*format)
+	if (*format == 'c')
+		*count += handle_char(args);
+	else if (*format == 's')
+		*count += handle_string(va_arg(args, char *));
+	else if (*format == '%')
+		*count += handle_percent();
+	else if (*format == 'd' || *format == 'i')
+		*count += handle_digit(va_arg(args, int), *count);
+	else if (*format == 'b')
+		*count += handle_binary(args);
+	else if (*format == 'o')
+		*count += handle_octal(args);
+	else if (*format == 'u')
+		*count += handle_unsigned_digit(args);
+	else if (*format == 'x')
+		*count += handle_hex_lower(args);
+	else if (*format == 'X')
+		*count += handle_hex_upper(args);
+	else
 	{
-		case 'c':
-			*count += handle_char(args);
-			break;
-		case 's':
-			str = va_arg(args, char *);
-			*count += handle_string(str);
-			break;
-		case '%':
-			*count += handle_percent();
-			break;
-		case 'd':
-		case 'i':
-			num = va_arg(args, int);
-			*count += handle_digit(num, *count);
-			break;
-		case 'b':
-			*count += handle_binary(args);
-			break;
-		case 'o':
-			*count += handle_octal(args);
-			break;
-		case 'u':
-			*count += handle_unsigned_digit(args);
-			break;
-		case 'x':
-			*count += handle_hex_lower(args);
-			break;
-		case 'X':
-			*count += handle_hex_upper(args);
-			break;
-		default:
-			_putchar('%');
+		_putchar('%');
+		(*count)++;
+		if (*format)
+		{
+			_putchar(*format);
 			(*count)++;
-			if (*format)
-			{
-				_putchar(*format);
-				(*count)++;
-			}
-			break;
+		}
 	}
 	return (format);
 }
