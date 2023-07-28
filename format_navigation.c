@@ -40,6 +40,12 @@ const char *format_navigation(const char *format, va_list args, int *count)
 		case 'u':
 			*count += handle_unsigned_digit(args);
 			break;
+		case 'x':
+			*count += handle_hex_lower(args);
+			break;
+		case 'X':
+			*count += handle_hex_upper(args);
+			break;
 		default:
 			_putchar('%');
 			(*count)++;

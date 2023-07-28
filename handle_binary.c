@@ -11,6 +11,8 @@ int handle_binary(va_list args)
 	char *str;
 	int i;
 
+	i = 0;
+
 	str = _itoa(va_arg(args, unsigned int), 2);
 
 	i = _puts(str);

@@ -20,5 +20,7 @@ const char *format_navigation(const char *format, va_list args, int *count);
 int handle_binary(va_list args);
 int handle_octal(va_list ags);
 int handle_unsigned_digit(va_list args);
+int handle_hex_upper(va_list args);
+int handle_hex_lower(va_list args);
 
 #endif
